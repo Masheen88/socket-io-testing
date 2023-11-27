@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         blur: 10, // Adjust the blur for the glow effect
       },
     },
+    //interactivity of particles
     interactivity: {
       detect_on: "canvas",
       events: {
@@ -118,11 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
           mode: "push",
         },
       },
+      //modes of interactivity
       modes: {
         repulse: {
-          distance: 100,
+          distance: 50,
           duration: 0.4,
         },
+        //how particles behave when you click
         push: {
           particles_nb: 4,
         },

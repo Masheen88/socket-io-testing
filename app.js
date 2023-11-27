@@ -33,5 +33,7 @@ io.on("connection", (socket) => {
 
 const port = 3001;
 server.listen(port, () => {
+  //ie: http://localhost:3001/window1.html
+  //ie: http://localhost:3001/window2.html
   console.log("Listening on:", `http://localhost:${port}`);
 });
