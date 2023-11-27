@@ -64,7 +64,7 @@ const adjustParticles = (ownPosition, otherWindowPosition) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  socket = io("http://localhost:3000");
+  socket = io("http://localhost:3001");
   const statusDiv = document.getElementById("status");
 
   setInterval(() => {
@@ -84,13 +84,48 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize particles.js
   particlesJS("particles-js", {
     particles: {
+      //number of particles
       number: { value: 80 },
+      //link between particles
       line_linked: { enable: true },
+      //movement of particles
       move: {
         direction: "none",
         speed: 2,
         straight: false, // Set to false initially
         out_mode: "out",
+      },
+      //color of particles
+      color: {
+        value: "#ff0000", // Red color, you can change it
+      },
+      //shadow of particles
+      shadow: {
+        enable: true,
+        color: "#ff0000", // Same as particle color for a consistent glow
+        blur: 10, // Adjust the blur for the glow effect
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "repulse",
+        },
+        onclick: {
+          enable: true,
+          mode: "push",
+        },
+      },
+      modes: {
+        repulse: {
+          distance: 100,
+          duration: 0.4,
+        },
+        push: {
+          particles_nb: 4,
+        },
       },
     },
   });
